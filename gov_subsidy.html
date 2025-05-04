@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Government Subsidy Info</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      background: #f0f8ff;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .card {
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      height: 100%;
+    }
+    .title {
+      font-weight: bold;
+      color: #0c4a6e;
+    }
+    .link {
+      font-size: 0.9rem;
+      color: #007bff;
+      text-decoration: none;
+    }
+    .link:hover {
+      text-decoration: underline;
+    }
+    .section-title {
+      font-size: 1.6rem;
+      color: #0c4a6e;
+      margin-top: 50px;
+      font-weight: bold;
+      text-align: center;
+    }
+    .quote-divider {
+      background-color: #f9fbe7;
+      padding: 40px 0;
+      text-align: center;
+      margin: 50px 0;
+      position: relative;
+      border-radius: 10px;
+    }
+    .quote-divider span {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #0c4a6e;
+      font-style: italic;
+    }
+    .quote-divider::before, .quote-divider::after {
+      content: "";
+      display: inline-block;
+      width: 25%;
+      height: 1px;
+      background: #ccc;
+      vertical-align: middle;
+      margin: 0 10px;
+    }
+    .group-btn {
+      font-size: 1.2rem;
+      padding: 10px 20px;
+      background-color: #0c4a6e;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      margin-top: 40px;
+    }
+    .group-btn:hover {
+      background-color: #145374;
+    }
+    .modal-header {
+      background-color: #0c4a6e;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container my-5">
+    <h1 class="text-center mb-5 title">🌿 Government Subsidy Options for Rainwater Harvesting</h1>
+    
+    <div class="row g-4 mb-5">
+      <div class="col-md-6">
+        <div class="card p-3">
+          <h5 class="title">1. Urban Rooftop Rainwater Subsidy</h5>
+          <p>Subsidy for installing rooftop harvesting systems in urban households. Usually available through city corporations.</p>
+          <a href="https://swachhbharatmission.gov.in" target="_blank" class="link">Visit Swachh Bharat Urban Site</a>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card p-3">
+          <h5 class="title">2. Rural Water Conservation Grant</h5>
+          <p>Special programs for farmers and rural households to install rainwater tanks or recharge pits.</p>
+          <a href="https://pmksy.gov.in" target="_blank" class="link">PMKSY Official Portal</a>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card p-3">
+          <h5 class="title">3. Jal Shakti Mission Support</h5>
+          <p>National-level initiative under Jal Shakti Abhiyan offering support for community-based harvesting projects.</p>
+          <a href="https://jalshakti-ddws.gov.in/" target="_blank" class="link">Jal Shakti Mission Website</a>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card p-3">
+          <h5 class="title">4. State-Specific Schemes</h5>
+          <p>Each Indian state may have its own scheme — check local government portals (Maharashtra, Karnataka, Tamil Nadu, etc.).</p>
+          <a href="https://maharashtra.gov.in/" target="_blank" class="link">Maharashtra Govt Portal</a><br>
+          <a href="https://tn.gov.in/" target="_blank" class="link">Tamil Nadu Govt Portal</a><br>
+          <a href="https://karnataka.gov.in/" target="_blank" class="link">Karnataka Govt Portal</a>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card p-3">
+          <h5 class="title">5. School/College Campus Subsidy</h5>
+          <p>Grants for educational institutions to implement harvesting as part of sustainable development.</p>
+          <a href="https://ugc.ac.in/" target="_blank" class="link">Visit UGC Website</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-divider">
+      <span>OR... 🌦️ "Together, we save more than just water."</span>
+    </div>
+
+    <div>
+      <h2 class="section-title">🤝 Collaborative Options: Work With Your Neighbours</h2>
+      <div class="card p-4 mt-3">
+        <p>Residents living in apartments or nearby homes can collaborate to build a <strong>shared rainwater harvesting system</strong>. This reduces individual cost and improves efficiency.</p>
+        <ul>
+          <li>Form a local group or housing society committee</li>
+          <li>Apply for joint subsidies or community-level support</li>
+          <li>Share storage tanks or recharge pits across buildings</li>
+          <li>Use this platform to find local service providers together</li>
+        </ul>
+        <p><strong>Example:</strong> A group of 5 neighboring houses can collectively save up to 40% by installing a shared filtration + storage system.</p>
+      </div>
+    </div>
+
+    <!-- Group Discount Button -->
+    <div class="text-center">
+      <button class="group-btn" data-bs-toggle="modal" data-bs-target="#groupDiscountModal">
+        🌐 I want Group Discount / Group Rainwater Harvesting
+      </button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="groupDiscountModal" tabindex="-1" aria-labelledby="groupDiscountModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form id="groupDiscountForm">
+            <div class="modal-header">
+              <h5 class="modal-title" id="groupDiscountModalLabel">Group Discount Request</h5>
+              <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <label for="members" class="form-label">Number of Group Members:</label>
+              <input type="number" id="members" name="members" class="form-control" min="2" required />
+              <small class="text-muted">Minimum 2 members required for group discount.</small>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-success">Submit Request</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal fade" id="confirmationModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-4 text-center">
+          <h5 class="text-success mb-3">✅ Request Sent Successfully!</h5>
+          <p>Your request has been received and we’ll respond shortly based on your location and group size.</p>
+          <button class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('groupDiscountForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          const lat = position.coords.latitude;
+          const long = position.coords.longitude;
+          console.log('Location collected:', lat, long);
+          const memberCount = document.getElementById('members').value;
+          console.log(`Group members: ${memberCount}`);
+          const groupModal = bootstrap.Modal.getInstance(document.getElementById('groupDiscountModal'));
+          groupModal.hide();
+          const confirmModal = new bootstrap.Modal(document.getElementById('confirmationModal'));
+          confirmModal.show();
+        }, function(error) {
+          alert('⚠️ Location access is required to send group request.');
+        });
+      } else {
+        alert('Geolocation is not supported by your browser.');
+      }
+    });
+  </script>
+</body>
+</html>

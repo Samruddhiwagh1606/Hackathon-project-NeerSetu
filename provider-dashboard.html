@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Provider Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      margin: 0;
+      padding: 30px;
+    }
+
+.card {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.card-header {
+  background-color: #55baec;
+  color: white;
+  padding: 10px;
+  border-radius: 8px 8px 0 0;
+  font-size: 16px;
+}
+
+.btn {
+  background-color: #000;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.btn:hover {
+  background-color: #333;
+}
+
+.btn-secondary {
+  background-color: #d9534f;
+}
+
+.btn-submit {
+  background-color: #f545af;
+}
+
+.form-section {
+  display: none;
+  margin-top: 15px;
+}
+
+.form-section input {
+  padding: 10px;
+  width: 70%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.summary-boxes {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.summary-box {
+  background-color: #f1c40f;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  width: 30%;
+  text-align: center;
+}
+
+h2, h4 {
+  color: #333;
+}
+
+.profile-btn {
+  background-color: #000;
+  color: white;
+  border-radius: 30px;
+  padding: 10px 30px;
+  margin-top: 30px;
+  display: inline-block;
+  text-align: center;
+  font-size: 16px;
+}
+
+.status {
+  margin-top: 10px;
+  font-style: italic;
+  color: #2c3e50;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="card text-center">
+      <h2>Welcome, Provider Name!</h2>
+      <p>Your professional dashboard</p>
+    </div>
+
+<div class="summary-boxes">
+  <div class="summary-box">
+    <h4>Total Requests</h4>
+    <p id="totalRequests">2</p>
+  </div>
+  <div class="summary-box">
+    <h4>Completed Projects</h4>
+    <p id="completedProjects">0</p>
+  </div>
+  <div class="summary-box">
+    <h4>Total Earnings</h4>
+    <p id="totalEarnings">₹0</p>
+  </div>
+</div>
+
+<h4>New Service Requests</h4>
+
+<!-- Request Card 1 -->
+<div class="card" id="requestCard1">
+  <div class="card-header">Installation Request</div>
+  <div class="card-body">
+    <p><strong>User:</strong> Priya Sharma</p>
+    <p><strong>Location:</strong> Pune</p>
+    <p><strong>Date:</strong> 5 May 2025</p>
+    <button class="btn" onclick="showPaymentOptions(1)">Accept</button>
+    <button class="btn btn-secondary" onclick="declineRequest('requestCard1')">Decline</button>
+
+    <!-- Choose Payment Model -->
+    <div class="form-section" id="paymentOptions1">
+      <div id="modelButtons1">
+        <button class="btn" onclick="chooseModel(1, 'Subscription')">Subscription Model</button>
+        <button class="btn" onclick="chooseModel(1, 'Commission')">Commission Model</button>
+      </div>
+      <div id="paymentBox1" style="margin-top: 10px; display: none;">
+        <p>Pay ₹5000 to continue</p>
+        <button class="btn btn-submit" onclick="completePayment(1)">Confirm Payment</button>
+      </div>
+    </div>
+
+    <!-- Quotation Form -->
+    <div id="form1" class="form-section">
+      <input type="text" id="quoteInput1" placeholder="Enter your quotation in ₹">
+      <button class="btn btn-submit" onclick="submitQuotation('form1', 'status1', 'quoteInput1')">Send Quotation</button>
+      <p class="status" id="status1"></p>
+    </div>
+  </div>
+</div>
+
+<!-- Request Card 2 -->
+<div class="card" id="requestCard2">
+  <div class="card-header">Maintenance Request</div>
+  <div class="card-body">
+    <p><strong>User:</strong> Ravi Deshmukh</p>
+    <p><strong>Location:</strong> Nashik</p>
+    <p><strong>Date:</strong> 6 May 2025</p>
+    <button class="btn" onclick="showPaymentOptions(2)">Accept</button>
+    <button class="btn btn-secondary" onclick="declineRequest('requestCard2')">Decline</button>
+
+    <!-- Choose Payment Model -->
+    <div class="form-section" id="paymentOptions2">
+      <div id="modelButtons2">
+        <button class="btn" onclick="chooseModel(2, 'Subscription')">Subscription Model</button>
+        <button class="btn" onclick="chooseModel(2, 'Commission')">Commission Model</button>
+      </div>
+      <div id="paymentBox2" style="margin-top: 10px; display: none;">
+        <p>Pay ₹5000 to continue</p>
+        <button class="btn btn-submit" onclick="completePayment(2)">Confirm Payment</button>
+      </div>
+    </div>
+
+    <!-- Quotation Form -->
+    <div id="form2" class="form-section">
+      <input type="text" id="quoteInput2" placeholder="Enter your quotation in ₹">
+      <button class="btn btn-submit" onclick="submitQuotation('form2', 'status2', 'quoteInput2')">Send Quotation</button>
+      <p class="status" id="status2"></p>
+    </div>
+  </div>
+</div>
+
+<div class="text-center">
+  <a href="#" class="profile-btn">Profile & Settings</a>
+</div>
+
+  </div>
+
+  <script>
+    function showPaymentOptions(cardNum) {
+      document.getElementById(`paymentOptions${cardNum}`).style.display = 'block';
+    }
+
+    function chooseModel(cardNum, model) {
+      alert(`You selected the ${model} model. Now proceed to pay ₹5000.`);
+      document.getElementById(`modelButtons${cardNum}`).style.display = 'none';
+      document.getElementById(`paymentBox${cardNum}`).style.display = 'block';
+    }
+
+    function completePayment(cardNum) {
+      alert("Payment of ₹5000 successful!");
+      document.getElementById(`paymentBox${cardNum}`).style.display = 'none';
+      document.getElementById(`form${cardNum}`).style.display = 'block';
+    }
+
+    function declineRequest(cardId) {
+      document.getElementById(cardId).style.display = 'none';
+      updateTotalRequests(-1);
+    }
+
+    function submitQuotation(formId, statusId, inputId) {
+      const input = document.getElementById(inputId);
+      const quote = input.value.trim();
+      if (quote === "" || isNaN(quote)) {
+        alert("Please enter a valid number for quotation.");
+        return;
+      }
+
+      document.getElementById(statusId).textContent = `Quotation of ₹${quote} sent to user. Awaiting response...`;
+      input.disabled = true;
+      document.getElementById(formId).querySelector("button").disabled = true;
+    }
+
+    function updateTotalRequests(change) {
+      let total = parseInt(document.getElementById("totalRequests").textContent);
+      total += change;
+      document.getElementById("totalRequests").textContent = total < 0 ? 0 : total;
+    }
+  </script>
+
+</body>
+</html>

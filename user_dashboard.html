@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 30px;
+      background-color: #f4f7fc;
+    }
+
+    .header {
+      background-color: #f05eae;
+      color: rgb(17, 17, 17);
+      padding: 10px 0;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: white;
+      width: 80%;
+      margin: 10px 0;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+      background-color: #55baec;
+      color: white;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 18px;
+    }
+
+    .card-body {
+      padding: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .summary-box {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px; /* Space between boxes */
+      margin-bottom: 20px;
+      width: 80%; /* Make the summary box container narrower */
+    }
+
+    .summary-box .box {
+      background-color: #f1c40f;
+      color: black;
+      padding: 20px;
+      border-radius: 10px;
+      width: 30%; /* Each box takes 30% of the container width */
+      text-align: center;
+      font-size: 18px;
+    }
+
+    .btn {
+      background-color: #000;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 15px;
+    }
+
+    .btn:hover {
+      background-color: #333;
+    }
+
+    .status {
+      font-style: italic;
+      color: #2c3e50;
+    }
+
+    .profile-btns {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .input-field {
+      border: none;
+      background-color: #f4f7fc;
+      padding: 5px;
+      width: 100%;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .input-field:disabled {
+      background-color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h2>Welcome to Your Dashboard, User!</h2>
+  </div>
+
+  <div class="container">
+
+    <!-- User Information Section -->
+    <div class="card">
+      <div class="card-header">User Profile</div>
+      <div class="card-body">
+        <p><strong>Name:</strong> <input id="nameInput" class="input-field" type="text" value="Priya Sharma" disabled></p>
+        <p><strong>Email:</strong> <input id="emailInput" class="input-field" type="email" value="priyasharma@example.com" disabled></p>
+        <p><strong>Location:</strong> <input id="locationInput" class="input-field" type="text" value="Pune" disabled></p>
+        <div class="profile-btns">
+          <button class="btn" id="editBtn" onclick="editProfile()">Edit Profile</button>
+          <button class="btn" id="saveBtn" style="display:none;" onclick="saveProfile()">Save Profile</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service Request Summary -->
+    <div class="summary-box">
+      <div class="box">
+        <h4>Total Requests</h4>
+        <p>2</p>
+      </div>
+      <div class="box">
+        <h4>Completed Projects</h4>
+        <p>1</p>
+      </div>
+      <div class="box">
+        <h4>Pending Payments</h4>
+        <p>₹5000</p>
+      </div>
+    </div>
+
+    <!-- Service Request Details -->
+    <div class="card">
+      <div class="card-header">Service Request 1: Installation</div>
+      <div class="card-body">
+        <p><strong>Provider:</strong> Ravi Deshmukh</p>
+        <p><strong>Date:</strong> 5 May 2025</p>
+        <p><strong>Status:</strong> Pending</p>
+        <button class="btn" onclick="showPaymentOptions()">Pay Now</button>
+      </div>
+    </div>
+
+    <!-- Payment Section -->
+    <div id="paymentSection" style="display: none;">
+      <div class="card">
+        <div class="card-header">Payment Options</div>
+        <div class="card-body">
+          <p><strong>Amount:</strong> ₹5000</p>
+          <button class="btn" onclick="completePayment()">Pay with Razorpay</button>
+          <button class="btn" onclick="completePayment()">Pay with Juspay</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="status" id="paymentStatus"></div>
+
+  </div>
+
+  <script>
+    function editProfile() {
+      // Enable input fields for editing
+      document.getElementById('nameInput').disabled = false;
+      document.getElementById('emailInput').disabled = false;
+      document.getElementById('locationInput').disabled = false;
+      
+      // Show Save button and hide Edit button
+      document.getElementById('editBtn').style.display = 'none';
+      document.getElementById('saveBtn').style.display = 'inline-block';
+    }
+
+    function saveProfile() {
+      // Save the edited profile (For now, we just log the updated details)
+      const name = document.getElementById('nameInput').value;
+      const email = document.getElementById('emailInput').value;
+      const location = document.getElementById('locationInput').value;
+
+      console.log('Profile Saved:', { name, email, location });
+
+      // Disable input fields after saving
+      document.getElementById('nameInput').disabled = true;
+      document.getElementById('emailInput').disabled = true;
+      document.getElementById('locationInput').disabled = true;
+      
+      // Show Edit button and hide Save button
+      document.getElementById('editBtn').style.display = 'inline-block';
+      document.getElementById('saveBtn').style.display = 'none';
+    }
+
+    function showPaymentOptions() {
+      document.getElementById('paymentSection').style.display = 'block';
+    }
+
+    function completePayment() {
+      document.getElementById('paymentStatus').textContent = 'Payment successful!';
+      document.getElementById('paymentSection').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

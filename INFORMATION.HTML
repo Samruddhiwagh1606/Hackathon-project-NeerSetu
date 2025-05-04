@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainwater Harvesting</title>
+    <!-- Add your custom CSS link here -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Example inline styling to customize the appearance */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        header {
+            background-color: #4CAF50;
+            padding: 15px;
+            color: white;
+            text-align: center;
+        }
+        section {
+            padding: 20px;
+        }
+        .bg-lightyellow-custom {
+            background-color: #fff9c4;
+        }
+        .bg-white {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        h3 {
+            color: #4CAF50;
+        }
+        .feedback-box {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .btn-pink-custom {
+            background-color: #e91e63;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rainwater Harvesting</h1>
+        <p>Learn, Implement, and Save Water</p>
+    </header>
+
+    <section class="py-5 bg-lightyellow-custom">
+        <div class="container">
+            <h2 class="display-5 text-center fw-bold mb-4">About Rainwater Harvesting</h2>
+            <p>Rainwater harvesting is the process of collecting and storing rainwater from rooftops, land surfaces, or other catchment areas, typically for reuse. This eco-friendly method has been practiced for centuries and is now increasingly used worldwide. In today's world, with water scarcity becoming a major issue, rainwater harvesting offers a sustainable solution to conserve and use water efficiently.</p>
+            <p>The main benefits of rainwater harvesting include reducing water bills, decreasing the strain on groundwater resources, and promoting environmental sustainability by preventing runoff and promoting groundwater recharge. Rainwater, when filtered and treated properly, can be used for a variety of purposes, including irrigation, non-potable uses like toilet flushing, and even for drinking water in some cases.</p>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <h3 class="text-center">Techniques & Guides</h3>
+
+            <h4>1. Rooftop Rainwater Harvesting</h4>
+            <p>This method collects rainwater from the rooftops of buildings and channels it into storage tanks. The harvested water can be used for irrigation, washing, and even drinking if treated. It is one of the most common and effective methods of rainwater harvesting.</p>
+            <p>Key steps include setting up gutters, downspouts, and storage tanks, and using a first flush system to ensure clean water collection.</p>
+
+            <h4>2. Recharge Pits</h4>
+            <p>Recharge pits allow rainwater to percolate into the ground, replenishing groundwater levels. They are typically used in areas where groundwater depletion is a concern. The water from recharge pits seeps into the soil, enriching the underground water table.</p>
+            <p>This technique is especially beneficial in areas with limited surface water availability.</p>
+
+            <h4>3. Rain Barrels</h4>
+            <p>Rain barrels are a simple and affordable way to collect rainwater. These barrels are placed at downspouts to capture runoff from rooftops. The water can be used for irrigation, gardening, and washing outdoor spaces.</p>
+            <p>Rain barrels are easy to install and maintain, making them a great option for homeowners looking to conserve water.</p>
+
+            <h4>4. Surface Runoff Harvesting</h4>
+            <p>This technique involves capturing runoff from paved or open spaces and directing it to storage tanks or recharge pits. It helps reduce the risk of flooding and ensures that valuable rainwater is not lost.</p>
+            <p>Surface runoff harvesting is particularly useful in urban environments with large areas of impervious surfaces.</p>
+        </div>
+    </section>
+
+    <section class="py-5 bg-lightyellow-custom">
+        <div class="container">
+            <h2 class="display-5 text-center fw-bold mb-4">Articles & Blogs</h2>
+
+            <h4>Why Rainwater Harvesting Matters</h4>
+            <p>This article delves into the significance of rainwater harvesting as a solution to the growing global water crisis. By capturing and utilizing rainwater, we can reduce the pressure on municipal water systems and provide clean water to communities facing water scarcity.</p>
+
+            <h4>DIY Rainwater Harvesting System</h4>
+            <p>This blog provides a step-by-step guide for building a simple rainwater harvesting system at home. From choosing the right materials to setting up gutters and tanks, this guide helps homeowners create an affordable and efficient system for collecting and storing rainwater.</p>
+
+            <h4>Case Studies</h4>
+            <p>In this section, we explore real-life examples of successful rainwater harvesting projects from around the world. From urban buildings to rural farms, these case studies demonstrate the effectiveness of rainwater harvesting in various environments.</p>
+        </div>
+    </section>
+
+    <section class="py-5 bg-lightyellow-custom">
+        <h3 class="display-5 text-center fw-bold mb-4">We Value Your Feedback</h3>
+        <p class="text-center mb-4">Your feedback helps us improve. Share your thoughts!</p>
+        <div class="container">
+            <div class="bg-white shadow p-4 rounded">
+                <textarea class="form-control feedback-box mb-3" placeholder="Type your feedback here..."></textarea>
+                <button class="btn btn-pink-custom px-4 py-2 rounded-pill">Submit</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container text-center py-4">
+            <p>© 2025 Rainwater Harvesting Info. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Example JavaScript to handle feedback form submission
+        document.querySelector('.btn-pink-custom').addEventListener('click', function() {
+            const feedbackText = document.querySelector('.feedback-box').value;
+            if (feedbackText.trim() !== '') {
+                alert('Thank you for your feedback!');
+                document.querySelector('.feedback-box').value = ''; // Clear the feedback box
+            } else {
+                alert('Please enter your feedback!');
+            }
+        });
+    </script>
+</body>
+</html>

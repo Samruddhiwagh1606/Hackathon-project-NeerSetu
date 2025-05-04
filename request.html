@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Service</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa; /* Light grey background for a clean look */
+            padding: 0;
+            margin: 0;
+        }
+
+        header {
+            background-color: #ecfb4d; /* Yellow background */
+            color: black;
+            text-align: center;
+            padding: 30px 15px;
+            font-size: 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 20px;
+            color: #141313; /* Soft pink for quotes */
+            text-align: center;
+            margin-bottom: 30px;
+            padding-top: 15px;
+        }
+
+        .service-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .service-option button {
+            padding: 12px 20px;
+            font-size: 15px;
+            background-color: #fb2d6e; /* Hot Pink for buttons */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            margin: 12px;
+            transition: background-color 0.3s ease;
+            width: 60%; /* Reduced button width */
+            text-transform: uppercase;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-option button:hover {
+            background-color: #a4fad3; /* Darker pink on hover */
+            cursor: pointer;
+        }
+
+        .service-option button:active {
+            transform: scale(0.98);
+        }
+
+        .form-section {
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            margin-top: 20px;
+            width: 80%;
+            margin-bottom: 40px;
+        }
+
+        .form-section h3 {
+            color: #333;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #2a21df; /* Pink color for heading */
+        }
+
+        .form-section input, .form-section select, .form-section textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            font-size: 14px; /* Smaller input field font */
+        }
+
+        .form-section textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-section button {
+            background-color: #00bfff; /* Light Blue for submit button */
+            color: white;
+            border: none;
+            padding: 10px 40px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .form-section button:hover {
+            background-color: #0099cc; /* Darker blue on hover */
+        }
+
+        .coming-soon {
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            color: red;
+            margin-top: 50px;
+            letter-spacing: 2px;
+        }
+
+        .pop-up {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            z-index: 1000;
+        }
+
+        .pop-up h4 {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .pop-up button {
+            background-color: #ef2b7a;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 18px;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .pop-up button:hover {
+            background-color: #78d0f6;
+        }
+
+        .service-option button:focus {
+            outline: none;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    Request Service
+</header>
+
+<div class="container">
+    <!-- Service Options with quotes -->
+    <div class="quote">
+        "Choose the service that suits your needs, and let us help you with a hassle-free experience!"
+    </div>
+
+    <div class="service-option">
+        <button id="installation-btn">Request Installation</button>
+        <div class="quote">"Let us help you install a system that works perfectly for you!"</div>
+        
+        <button id="maintenance-btn">Request Maintenance</button>
+        <div class="quote">"Ensure that your system keeps working perfectly. Regular maintenance is key!"</div>
+
+        <button id="accessories-btn">Accessories</button>
+        <div class="quote">"Coming soon! Stay tuned for our exciting range of accessories!"</div>
+    </div>
+
+    <!-- Installation Form (Initially hidden) -->
+    <div id="installation-form" class="form-section" style="display: none;">
+        <h3>Request Installation</h3>
+        <label for="install-location">Installation Location:</label>
+        <input type="text" id="install-location" placeholder="Enter Location">
+        
+        <label for="installation-type">Type of Installation:</label>
+        <select id="installation-type">
+            <option value="roof-top">Roof Top</option>
+            <option value="ground">Ground Installation</option>
+            <option value="others">Others</option>
+        </select>
+
+        <label for="install-date">Preferred Installation Date:</label>
+        <input type="date" id="install-date">
+        
+        <label for="install-time">Preferred Installation Time:</label>
+        <input type="time" id="install-time">
+        
+        <label for="special-requests">Any Special Requirements:</label>
+        <textarea id="special-requests" placeholder="Enter your requirements"></textarea>
+        
+        <button id="submit-installation">Submit Request</button>
+    </div>
+
+    <!-- Maintenance Form (Initially hidden) -->
+    <div id="maintenance-form" class="form-section" style="display: none;">
+        <h3>Request Maintenance</h3>
+        <label for="maintenance-type">Maintenance Type:</label>
+        <select id="maintenance-type">
+            <option value="cleaning">Cleaning</option>
+            <option value="repair">Repairs</option>
+            <option value="inspection">Inspection</option>
+            <option value="order">Order Parts</option>
+        </select>
+
+        <label for="maintenance-issues">Issues Observed:</label>
+        <textarea id="maintenance-issues" placeholder="Describe issues like leaks, poor water collection, etc."></textarea>
+        
+        <label for="maintenance-date">Preferred Maintenance Date:</label>
+        <input type="date" id="maintenance-date">
+
+        <label for="maintenance-time">Preferred Maintenance Time:</label>
+        <input type="time" id="maintenance-time">
+        
+        <button id="submit-maintenance">Submit Maintenance Request</button>
+    </div>
+
+    <!-- Accessories Section (Initially hidden) -->
+    <div id="accessories-section" class="coming-soon" style="display: none;">
+        <h1>COMING SOON</h1>
+    </div>
+</div>
+
+<!-- Pop-up after submitting -->
+<div id="pop-up" class="pop-up">
+    <h4>Request Submitted Successfully!</h4>
+    <button onclick="closePopUp()">OK</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // Toggle between different sections
+    $('#installation-btn').click(function() {
+        $('#installation-form').toggle(); // Toggle installation form visibility
+        $('#maintenance-form').hide(); // Hide maintenance form
+        $('#accessories-section').hide(); // Hide accessories section
+    });
+
+    $('#maintenance-btn').click(function() {
+        $('#maintenance-form').toggle(); // Toggle maintenance form visibility
+        $('#installation-form').hide(); // Hide installation form
+        $('#accessories-section').hide(); // Hide accessories section
+    });
+
+    $('#accessories-btn').click(function() {
+        $('#accessories-section').toggle(); // Toggle accessories section visibility
+        $('#installation-form').hide(); // Hide installation form
+        $('#maintenance-form').hide(); // Hide maintenance form
+    });
+
+    // Submit Installation Form
+    $('#submit-installation').click(function() {
+        $('#pop-up').show();
+    });
+
+    // Submit Maintenance Form
+    $('#submit-maintenance').click(function() {
+        $('#pop-up').show();
+    });
+
+    // Close pop-up
+    function closePopUp() {
+        $('#pop-up').hide();
+        window.location.href = "index.html"; // Redirect to homepage (replace index.html with your homepage)
+    }
+</script>
+
+</body>
+</html>
+
