@@ -3,7 +3,8 @@ NeerSetu is an online platform designed to connect users with service providers 
 
 
 NeerSetu is a modified version of the existing- HarvestH2O platform.( https://www.harvesth2o.com/)
-NeerSetu link : https://samruddhiwagh1606.github.io/Hackathon-project-NeerSetu/
+
+NeerSetu website link : https://samruddhiwagh1606.github.io/Hackathon-project-NeerSetu/
 
 --Key Features and Modifications--
 
