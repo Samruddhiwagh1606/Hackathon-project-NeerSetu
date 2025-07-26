@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -58,6 +58,8 @@
 
 <body class="bg-white-custom text-black-custom">
 
+  <!-- Your page content goes here (header, sections, etc.) -->
+
   <!-- ✅ Firebase Sign Up Handler -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -86,22 +88,23 @@
 
   <!-- ✅ Feedback Handler -->
   <script>
-    document.getElementById("submitFeedback").addEventListener("click", function () {
+    document.addEventListener("DOMContentLoaded", function () {
+      const submitFeedbackBtn = document.getElementById("submitFeedback");
       const feedbackBox = document.getElementById("feedbackInput");
 
-      if (feedbackBox.value.trim() !== "") {
-        alert("Thank you! Your feedback has been submitted.");
-        feedbackBox.value = "";
-        feedbackBox.style.display = "none";
-      } else {
-        alert("Please enter some feedback before submitting.");
+      if (submitFeedbackBtn) {
+        submitFeedbackBtn.addEventListener("click", function () {
+          if (feedbackBox && feedbackBox.value.trim() !== "") {
+            alert("Thank you! Your feedback has been submitted.");
+            feedbackBox.value = "";
+            feedbackBox.style.display = "none";
+          } else {
+            alert("Please enter some feedback before submitting.");
+          }
+        });
       }
     });
   </script>
-
-  <!-- ✅ Your full body content continues below -->
-  <!-- (I’ve left the rest of your HTML body the same for brevity — header, sections, etc. are unchanged) -->
-
 </body>
-</html>   
-  
+</html>
+
